@@ -1,0 +1,117 @@
+/* підключення шрифтів */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
+
+/* налаштування видимої частини вікна браузера обох сторінок */
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* налаштування заголовку */
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+/* загальні налаштування блоку з елементами вибору */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 75px;
+}
+
+/* налаштування оболонки одного елементу вибору */
+li.pick-one {
+  text-align: center;
+}
+
+/* налаштування вмісту одного елементу вибору */
+li.pick-one button {
+  background: none;
+  border: 2px solid black;
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+  height: 355px;
+  width: 325px;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* налаштування вмісту одного елементу вибору при ховері*/
+li.pick-one button:hover {
+  border: 10px solid #ffb800;
+}
+
+/* налаштування зображення всередині кнопки */
+li.pick-one img {
+  max-width: 250px;
+  min-height: 250px;
+}
+
+/* ДОДАТКОВІ НАЛАШТУВАННЯ ДЛЯ СТОРІНКИ ПЕРЕМОЖЕЦЬ */
+
+/* перемога людини */
+body.winner.you-win {
+  background: url("./images/you-win.svg") left top no-repeat;
+  background-size: auto 100%;
+}
+
+/* перемога комп'ютера */
+body.winner.computer-wins {
+  background: url("./images/computer-wins.svg") right top no-repeat;
+  background-size: auto 100%;
+}
+
+/* налаштування заголовку на обидва випадки */
+body.you-win h1.computer-wins,
+body.computer-wins h1.you-win {
+  visibility: hidden;
+}
+
+/* додаткові налаштування основного контейнера на сторінці визначення переможця */
+body.winner .wrapper {
+  display: flex;
+  gap: 200px;
+  position: relative;
+}
+
+/* додаткові налаштування зображення на сторінці визначення переможця */
+/* body.winner img {
+  mix-blend-mode: darken;
+} */
+
+body.winner .computer-pick img {
+  transform: scaleX(-1);
+}
+
+/* кнопка перезапуску гри */
+.play-again {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  cursor: pointer;
+  font-family: "Roboto Mono", monospace;
+  font-size: 2rem;
+  border: 2px solid black;
+  background: none;
+  padding: 15px 85px;
+}
+
+.play-again:hover {
+  background-color: black;
+  color: white;
+}
